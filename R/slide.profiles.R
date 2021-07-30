@@ -1,4 +1,4 @@
-library(manipulate)
+#library(manipulate)
 
 #-----------------------------------------------
 #Push signal left or right with NA padding
@@ -10,9 +10,9 @@ rotateLR<-function(profiledata,shift){
   } else {
     shiftedpattern<-c(profiledata,rep(NA,abs(shift)))
   }
-  
+
   return(shiftedpattern);
-  
+
 }
 
 #-----------------------------------------------
@@ -21,15 +21,15 @@ rotateLR<-function(profiledata,shift){
 #shift<0 shifts left
 #-----------------------------------------------
 slide.over<-function(ref,sld,shift){
-  
+
   ymax<-max(na.omit(c(ref,sld)))
   ymin<-min(na.omit(c(ref,sld)))
   #print(c(ymin,ymax))
-  
+
   plot(rotateLR(ref,-shift),col="blue",ylab="",typ="l",ylim=c(ymin,ymax))
   par(new=TRUE)
   plot(rotateLR(sld,shift),col="red",typ="l",ylab="",main="Ref=Blue, Sliding=Red",ylim=c(ymin,ymax))
-  
+
 }
 
 #-----------------------------------------------
@@ -58,7 +58,7 @@ islide2<-function(sdat,max.shift,max.y.sep){
 }
 
 #-----------------------------------------------
-#Interactively slide two signals over each other. 
+#Interactively slide two signals over each other.
 #Signals are differnt lengths however
 #-----------------------------------------------
 islide3<-function(ref,sld,max.shift){
@@ -67,7 +67,7 @@ islide3<-function(ref,sld,max.shift){
     sld2<-c(sld,rep(NA,length(ref)-length(sld)))
     #print(length(ref2))
     #print(length(sld2))
-  } 
+  }
   if(length(ref)<length(sld)) {
     sld2<-sld
     ref2<-c(ref,rep(NA,length(sld)-length(ref)))
@@ -79,8 +79,8 @@ islide3<-function(ref,sld,max.shift){
     sld2<-sld
     #print(length(ref2))
     #print(length(sld2))
-  } 
-  
+  }
+
   manipulate(
     slide.over(ref2,sld2+sep.shift,shift),
     shift = slider(-max.shift,max.shift,initial=0),

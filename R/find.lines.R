@@ -1,5 +1,5 @@
-library(dtw)
-library(bioDist)
+#library(dtw)
+#library(bioDist)
 
 #-----------------------------------------------------------------
 #Segment a profile into "Lines" (Gives a possible answer to Mattia's retorical question: "What's a line?")

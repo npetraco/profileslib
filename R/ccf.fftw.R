@@ -1,4 +1,4 @@
-library(fftw)
+#library(fftw)
 
 ccf.rfftw <- function(x, y, max.lag) {
 

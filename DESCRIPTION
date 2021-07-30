@@ -10,4 +10,5 @@ License: LGPL-3
 Encoding: UTF-8
 LazyData: true
 Depends: Rcpp (>= 1.0.5.2), R.utils (>= 2.10.1), e1071 (>= 1.7.7), caret (>= 6.0-88), akima (>= 0.6-2.1), waveslim (>= 1.8.2), fftw (>= 1.0-6), dtw (>= 1.22-3), bioDist (>= 1.60.0), manipulate (>= 1.0.1)
+Imports: wmtsa (>= 2.0-3)
 LinkingTo: Rcpp
